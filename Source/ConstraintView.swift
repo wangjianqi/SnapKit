@@ -29,6 +29,7 @@
 
 
 #if os(iOS) || os(tvOS)
+//其实就是UIView
     public typealias ConstraintView = UIView
 #else
     public typealias ConstraintView = NSView

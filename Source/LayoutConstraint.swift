@@ -29,7 +29,7 @@
 
 
 public class LayoutConstraint : NSLayoutConstraint {
-    
+    // 换一个属性名
     public var label: String? {
         get {
             return self.identifier
@@ -38,7 +38,8 @@ public class LayoutConstraint : NSLayoutConstraint {
             self.identifier = newValue
         }
     }
-    
+
+    // weak
     internal weak var constraint: Constraint? = nil
     
 }

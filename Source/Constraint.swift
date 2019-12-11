@@ -27,6 +27,7 @@
     import AppKit
 #endif
 
+// 基础熟悉
 public final class Constraint {
 
     internal let sourceLocation: (String, UInt)

@@ -29,6 +29,7 @@
 
 
 #if os(iOS) || os(tvOS)
+//就是UIEdgeInsets
     public typealias ConstraintInsets = UIEdgeInsets
 #else
     public typealias ConstraintInsets = NSEdgeInsets

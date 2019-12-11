@@ -26,7 +26,7 @@
 #else
     import AppKit
 #endif
-
+// make
 public class ConstraintMaker {
     
     public var left: ConstraintMakerExtendable {
@@ -164,6 +164,7 @@ public class ConstraintMaker {
     }
     
     private let item: LayoutConstraintItem
+    //创建一个数组
     private var descriptions = [ConstraintDescription]()
     
     internal init(item: LayoutConstraintItem) {
@@ -173,6 +174,7 @@ public class ConstraintMaker {
     
     internal func makeExtendableWithAttributes(_ attributes: ConstraintAttributes) -> ConstraintMakerExtendable {
         let description = ConstraintDescription(item: self.item, attributes: attributes)
+        // 加入到描述数组
         self.descriptions.append(description)
         return ConstraintMakerExtendable(description)
     }
@@ -189,7 +191,7 @@ public class ConstraintMaker {
         }
         return constraints
     }
-    
+    // 添加约束
     internal static func makeConstraints(item: LayoutConstraintItem, closure: (_ make: ConstraintMaker) -> Void) {
         let constraints = prepareConstraints(item: item, closure: closure)
         for constraint in constraints {

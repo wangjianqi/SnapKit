@@ -48,7 +48,7 @@ extension ConstraintDSL {
 }
 private var labelKey: UInt8 = 0
 
-
+// 基础属性
 public protocol ConstraintBasicAttributesDSL : ConstraintDSL {
 }
 extension ConstraintBasicAttributesDSL {

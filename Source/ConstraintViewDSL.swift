@@ -27,26 +27,26 @@
     import AppKit
 #endif
 
-
+// ConstraintViewDSL 实现ConstraintAttributesDSL协议
 public struct ConstraintViewDSL: ConstraintAttributesDSL {
     
     @discardableResult
     public func prepareConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> [Constraint] {
         return ConstraintMaker.prepareConstraints(item: self.view, closure: closure)
     }
-    
+    // 添加约束
     public func makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
         ConstraintMaker.makeConstraints(item: self.view, closure: closure)
     }
-    
+    // 删除约束
     public func remakeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
         ConstraintMaker.remakeConstraints(item: self.view, closure: closure)
     }
-    
+    // 更新约束
     public func updateConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
         ConstraintMaker.updateConstraints(item: self.view, closure: closure)
     }
-    
+    // 删除约束
     public func removeConstraints() {
         ConstraintMaker.removeConstraints(item: self.view)
     }
@@ -86,11 +86,11 @@ public struct ConstraintViewDSL: ConstraintAttributesDSL {
             self.view.setContentCompressionResistancePriority(LayoutPriority(rawValue: newValue), for: .vertical)
         }
     }
-    
+    // 返回View
     public var target: AnyObject? {
         return self.view
     }
-    
+    // 保存View
     internal let view: ConstraintView
     
     internal init(view: ConstraintView) {

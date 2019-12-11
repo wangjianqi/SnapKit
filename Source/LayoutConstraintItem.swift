@@ -27,10 +27,11 @@
     import AppKit
 #endif
 
-
+//Item 空协议
 public protocol LayoutConstraintItem: class {
 }
 
+//
 @available(iOS 9.0, OSX 10.11, *)
 extension ConstraintLayoutGuide : LayoutConstraintItem {
 }
@@ -38,9 +39,9 @@ extension ConstraintLayoutGuide : LayoutConstraintItem {
 extension ConstraintView : LayoutConstraintItem {
 }
 
-
+// 扩展item协议
 extension LayoutConstraintItem {
-    
+    //SnapKit已经将translatesAutoresizingMaskIntoConstraints设置为false了，不需要外界在设置了
     internal func prepare() {
         if let view = self as? ConstraintView {
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -58,24 +59,28 @@ extension LayoutConstraintItem {
         
         return nil
     }
+    //保存约束的集合
     internal var constraints: [Constraint] {
         return self.constraintsSet.allObjects as! [Constraint]
     }
-    
+
+    //添加
     internal func add(constraints: [Constraint]) {
         let constraintsSet = self.constraintsSet
         for constraint in constraints {
             constraintsSet.add(constraint)
         }
     }
-    
+
+    //删除
     internal func remove(constraints: [Constraint]) {
         let constraintsSet = self.constraintsSet
         for constraint in constraints {
             constraintsSet.remove(constraint)
         }
     }
-    
+
+    //约束的集合
     private var constraintsSet: NSMutableSet {
         let constraintsSet: NSMutableSet
         

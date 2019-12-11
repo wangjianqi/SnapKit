@@ -27,11 +27,12 @@
     import AppKit
 #endif
 
-
+// 继承自ConstraintMakerRelatable
 public class ConstraintMakerExtendable: ConstraintMakerRelatable {
     
     public var left: ConstraintMakerExtendable {
         self.description.attributes += .left
+        //返回的是self
         return self
     }
     

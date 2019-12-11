@@ -27,7 +27,7 @@
     import AppKit
 #endif
 
-
+// 空协议
 public protocol ConstraintConstantTarget {
 }
 
@@ -47,7 +47,7 @@ extension ConstraintDirectionalInsets: ConstraintConstantTarget {
 #endif
 
 extension ConstraintConstantTarget {
-    
+    //NSLayoutConstraint.Attribute
     internal func constraintConstantTargetValueFor(layoutAttribute: LayoutAttribute) -> CGFloat {
         if let value = self as? CGFloat {
             return value
@@ -78,13 +78,15 @@ extension ConstraintConstantTarget {
                 return 0.0
             }
         }
-        
+        // Point
         if let value = self as? CGPoint {
             #if os(iOS) || os(tvOS)
                 switch layoutAttribute {
                 case .left, .right, .leading, .trailing, .centerX, .leftMargin, .rightMargin, .leadingMargin, .trailingMargin, .centerXWithinMargins:
+                    //x坐标
                     return value.x
                 case .top, .bottom, .centerY, .topMargin, .bottomMargin, .centerYWithinMargins, .lastBaseline, .firstBaseline:
+                    // y坐标
                     return value.y
                 case .width, .height, .notAnAttribute:
                     return 0.0

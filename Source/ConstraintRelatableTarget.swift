@@ -27,7 +27,7 @@
     import AppKit
 #endif
 
-
+// 空协议
 public protocol ConstraintRelatableTarget {
 }
 
@@ -57,6 +57,7 @@ extension ConstraintInsets: ConstraintRelatableTarget {
 
 #if os(iOS) || os(tvOS)
 @available(iOS 11.0, tvOS 11.0, *)
+//NSDirectionalEdgeInsets
 extension ConstraintDirectionalInsets: ConstraintRelatableTarget {
 }
 #endif

@@ -144,7 +144,7 @@ public extension ConstraintView {
     func snp_removeConstraints() {
         self.snp.removeConstraints()
     }
-    
+    // 返回一个ConstraintViewDSL实例
     var snp: ConstraintViewDSL {
         return ConstraintViewDSL(view: self)
     }

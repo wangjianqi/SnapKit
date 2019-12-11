@@ -27,7 +27,7 @@
     import AppKit
 #endif
 
-
+// 优先级协议,全部转成Float
 public protocol ConstraintPriorityTarget {
     
     var constraintPriorityTargetValue: Float { get }
@@ -74,6 +74,7 @@ extension CGFloat: ConstraintPriorityTarget {
     
 }
 
+// 优先级也转成Float
 #if os(iOS) || os(tvOS)
 extension UILayoutPriority: ConstraintPriorityTarget {
 

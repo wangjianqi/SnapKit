@@ -27,7 +27,7 @@
     import AppKit
 #endif
 
-
+// final: 不能被继承
 public final class ConstraintItem {
     
     internal weak var target: AnyObject?

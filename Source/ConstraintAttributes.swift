@@ -27,7 +27,7 @@
     import AppKit
 #endif
 
-
+//OptionSet
 internal struct ConstraintAttributes : OptionSet, ExpressibleByIntegerLiteral {
     
     typealias IntegerLiteralType = UInt
